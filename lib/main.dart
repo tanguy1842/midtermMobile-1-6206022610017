@@ -27,6 +27,9 @@ class Form extends StatefulWidget {
 
 class _FormState extends State<Form> {
   TextEditingController _name = TextEditingController();
+  TextEditingController _sername = TextEditingController();
+  TextEditingController _sex = TextEditingController();
+  TextEditingController _date = TextEditingController();
   TextEditingController _edu = TextEditingController();
   TextEditingController _gpax = TextEditingController();
   TextEditingController _school = TextEditingController();
@@ -53,7 +56,7 @@ class _FormState extends State<Form> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: _name,
+                controller: _sername,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'นามสกุล'),
                 autofocus: true,
@@ -62,7 +65,7 @@ class _FormState extends State<Form> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: _name,
+                controller: _sex,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'เพศ'),
                 autofocus: true,
@@ -71,7 +74,7 @@ class _FormState extends State<Form> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: _name,
+                controller: _date,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'วันเดือนปีเกิด'),
                 autofocus: true,
@@ -214,6 +217,9 @@ class _FormState extends State<Form> {
                     MaterialPageRoute(
                       builder: (context) => WelcomePage(
                         name: _name.text,
+                        sername: _sername,
+                        sex: _sex,
+                        date: _date,
                         edu: _edu.text,
                         gpax: _gpax.text,
                         school: _school.text,
